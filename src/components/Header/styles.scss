@@ -1,0 +1,32 @@
+@use "../../scss/" as *;
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16rem 0;
+
+    .logoContainer{
+        display: flex;
+        align-items: center;
+        gap: 12rem;
+
+        .logoTitle{
+            width: 112rem;
+            @include fnt(18, 24, $weight: 600, $color: $blue-dark-500);
+        }
+    }
+    .navContainer{
+        display: flex;
+        align-items: center;
+        gap: 16rem;
+
+        .navItem{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+}

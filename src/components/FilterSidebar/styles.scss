@@ -1,0 +1,31 @@
+@use "../../scss/" as *;
+
+.filterContainer{
+    width: 306rem;
+}
+
+.filterTab{
+    display: flex;
+    align-items: center;
+    background-color: $gray-100;
+    padding: 4rem;
+    border-radius: 12rem;
+    gap: 6rem;
+
+    .border{
+        width: 1px;
+        background-color: $gray-300;
+        height: 100%;
+        content: '';
+    }
+
+    .tubButton{
+        width: 100%;
+        @include fnt(16, 24, $weight: 500, $color: $gray-800);
+        background-color: inherit;
+
+        &.active{
+            background-color: $white;
+        }
+    }
+}

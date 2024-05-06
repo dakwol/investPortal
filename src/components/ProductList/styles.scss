@@ -1,0 +1,26 @@
+@use "../../scss/" as *;
+
+.listTitleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 0 24rem;
+
+    .listTitle{
+        @include fnt(
+            24, 32, $color: $gray-900, $font: $fontText
+        )
+    }
+    span{
+        @include fnt(
+            24, 32, $color: $gray-400, $font: $fontText
+        )
+    }
+}
+
+.listCard{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(306rem, 1fr));
+    gap: 24rem;
+    
+}

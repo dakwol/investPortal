@@ -1,0 +1,72 @@
+@use "../../scss/" as *;
+
+.productCardContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    max-width: 306rem;
+    cursor: pointer;
+    .productCardBrand{
+        @include fnt(12, 16, $color: $gray-900, $font: $fontText);
+        padding: 4rem 8rem;
+        background-color: $gray-200;
+        width: fit-content;
+        border-radius: 4rem;
+    }
+    .productCardTitle{
+        @include fnt(16, 24, $color: $gray-900, $font: $fontText);
+    }
+    .productCardPrice{
+        @include fnt(20, 24, $color: $gray-900, $font: $fontText, $weight: 700);
+    }
+}
+
+.p-galleria-item{
+    display: block;
+}
+
+.carousel-image{
+    
+    img{
+    height: 306rem; 
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 12rem;
+    }
+}
+
+.p-galleria-indicators{
+    width: 306rem;
+    height: 306rem;
+    justify-content: space-between;
+   
+
+    .p-galleria-indicator{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+    }
+}
+
+.image-indicators{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+
+   .image-indicator{
+        width: 6rem;
+        height: 6rem;
+        content: '';
+        border-radius: 100%;
+        background-color: $gray-200;
+        cursor: pointer;
+
+        &.active{
+            background-color: $gray-400;
+        }
+   } 
+}
