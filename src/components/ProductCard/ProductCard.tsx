@@ -32,11 +32,11 @@ const ProductCard: FC<IProductProps> = ({ productItem }) => {
   return (
     <Link to={`${RouteNames.CARDINFO}/${productItem.slug}`}>
       <div key={productItem.id} className="productCardContainer">
-        {productItem.card_info.gallery_images.length === 0 ? (
+        {productItem?.card_info?.gallery_images?.length === 0 ? (
           <img src={icons.nophoto} alt="product image" />
         ) : (
           <Galleria
-            value={productItem.card_info.gallery_images}
+            value={productItem?.card_info?.gallery_images}
             className="custom-indicator-galleria"
             showThumbnails={false}
             showIndicators

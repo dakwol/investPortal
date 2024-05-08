@@ -5,6 +5,9 @@ export const API_CONTENT_MODEL = {
     methods: {
         products: {
             url: 'products/'
+        },
+        productCategories: {
+            url: 'products/categories/all/'
         }
     },
 }

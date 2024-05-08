@@ -14,9 +14,10 @@ const CardInfoPage: FC = () => {
     contentApi.products(slug).then((resp) => {
       if (resp.success) {
         resp.data && setDataCard(resp.data as IProduct);
+        window.scrollTo(0, 0);
       }
     });
-  }, []);
+  }, [slug]);
 
   return (
     <div className="container">

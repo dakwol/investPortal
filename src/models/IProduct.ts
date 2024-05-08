@@ -1,4 +1,4 @@
-interface CardInfo {
+export interface CardInfo {
   gallery_images: [];
   brand: string;
   name: string;
@@ -6,7 +6,7 @@ interface CardInfo {
 }
 
 export interface IProduct {
-  id: string | number,
-  slug: string,
+  id?: string | number,
+  slug?: string,
   card_info: CardInfo
 }

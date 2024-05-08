@@ -11,6 +11,9 @@ class ContentApiRequest extends BaseModelAPI {
     async products<T>(urlParams?: any) {
         return this.makeRequest<T>(axiosClient.get, {method: API_CONTENT_MODEL.methods.products.url, urlParams: urlParams});
     }
+    async productCategories<T>() {
+        return this.makeRequest<T>(axiosClient.get, {method: API_CONTENT_MODEL.methods.productCategories.url});
+    }
 }
 
 export default ContentApiRequest;

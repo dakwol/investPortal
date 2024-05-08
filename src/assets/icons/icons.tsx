@@ -24,6 +24,11 @@ import building from "./building.svg";
 import packageBox from "./package.svg";
 import tool from "./tool.svg";
 import nophoto from "./nophoto.svg";
+import Megamarket from "./Megamarket.svg";
+import Ozon from "./Ozon.svg";
+import Market from "./Market.svg";
+import Wb from "./Wb.svg";
+import arrowUpRight from "./arrow-up-right.svg";
 export default {
   HelpCircle,
   xClosed,
@@ -46,5 +51,10 @@ export default {
   building,
   packageBox,
   tool,
+  Megamarket,
   nophoto,
+  Ozon,
+  Market,
+  Wb,
+  arrowUpRight,
 };

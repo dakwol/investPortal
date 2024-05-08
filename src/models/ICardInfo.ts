@@ -9,6 +9,7 @@ export interface IProduct {
     };
     price: string;
     brand: {
+        name?: string;
         id: number;
         meta: {
             type: string;
@@ -18,6 +19,7 @@ export interface IProduct {
     ozon_link: string;
     yandex_market_link: string;
     megamarket_link: string;
+    wildberries_link: string;
     gallery_images: {
         image: string;
         caption: string;

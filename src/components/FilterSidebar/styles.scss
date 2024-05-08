@@ -29,3 +29,34 @@
         }
     }
 }
+
+.childCategoryName{
+    @include fnt(16, 24, $weight: 500, $color: $gray-900, $font: $fontText);
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    user-select: none;
+    
+    &:hover{
+        color: $blue;
+    }
+
+    &.active{
+       
+    }
+}
+.productName{
+    @include fnt(14, 20, $weight: 400, $color: $gray-900, $font: $fontText);
+    
+    padding: 4rem 12rem 4rem 32rem;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    user-select: none;
+
+    &:hover{
+        background-color: $blue-dark-50;
+    }
+
+    &.active{
+        @include fnt(14, 24, $weight: 400, $color: $gray-500, $font: $fontText);
+    }
+}

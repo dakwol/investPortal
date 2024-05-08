@@ -1,39 +1,162 @@
 @use "../../scss/" as *;
 
+.cardInfoTitle{
+    @include fnt(32, 36, $weight:600, $color: $gray-900,  $font: $fontText);
+    margin-bottom: 16rem;
+}
+
 .cardInfoContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
-.activeImage{
-    width: 100%;
-    height: 526rem;
-    border-radius: 12rem;
-    object-fit: cover;
-}
-
-.p-galleria-thumbnail-container{
-    
-}
-
-.p-galleria-content{
-    display: grid;
-    grid-template-columns: 86rem 1fr;
     gap: 24rem;
-}
 
-.imageThumbContainer{
-    padding: 4rem;
-    border-radius: 12rem;
-    overflow: hidden;
-    border: 1rem solid $blue-500;
-    display: flex;
-    align-items: center;
-}
+    h3{
+        @include fnt(20, 36, $weight:600, $color: $gray-900, $font: $fontText);
+    }
 
-.imageThumb{
-    object-fit: cover;
-    overflow: hidden;
-    border-radius: 8rem;
+    .desctiptionText{
+        @include fnt(14, 20, $weight:400, $color: $gray-900, $font: $fontText);
+    }
     
+    .activeImage{
+        width: 100%;
+        height: 526rem;
+        border-radius: 12rem;
+        object-fit: cover;
+    }
+
+    .cardInfoBlock{
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 18rem;
+
+        .galeryInfo{
+            .p-galleria-content{
+                display: grid;
+                grid-template-columns: 86rem 1fr;
+                gap: 24rem;
+            }
+        }
+    
+    }
+
+    .haracterLinkContainer{
+        display: grid;
+        grid-template-columns: 1fr 306rem;
+        gap: 24rem;
+
+        .haracterContainer{
+            display: flex;
+            flex-direction: column;
+            gap: 8rem;
+
+            .haracterItem{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1rem solid #eaecf0;
+                gap: 8rem;
+                padding-bottom: 8rem;
+
+                h5{
+                    @include fnt(14, 20, $weight:400, $color: $gray-500, $font: $fontUI);
+                }
+                p{
+                    @include fnt(14, 20, $weight:400, $color: $gray-900, $font: $fontUI);
+                    text-align: end;
+                }
+
+                &:last-child{
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .linkInfoContianer{
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+
+        background-color: $gray-100;
+        height: fit-content;
+        padding: 24rem;
+        border-radius: 12rem;
+
+        .linkInfoBrand{
+            padding: 4rem 8rem;
+            @include fnt(16, 20, $weight:400, $color: $gray-900, $font: $fontText);
+            background-color: $white;
+            border-radius: 4rem;
+            width: fit-content;
+        }
+
+        .linkInfoPrice{
+            @include fnt(28, 32, $weight:400, $color: $gray-900, $font: $fontText);
+
+            b{
+                @include fnt(28, 32, $weight:600, $color: $gray-900, $font: $fontText);
+            }
+        }
+
+        .subTitle{
+            @include fnt(14, 24, $weight:400, $color: $gray-500, $font: $fontText);
+        }
+        .subText{
+            @include fnt(12, 16, $weight:400, $color: $gray-400, $font: $fontText);
+        }
+    }
+
+
+    .imageThumbContainer{
+        padding: 4rem;
+        border-radius: 12rem;
+        overflow: hidden;
+        border: 1rem solid $blue-500;
+        display: flex;
+        align-items: center;
+    }
+
+    .imageThumb{
+        object-fit: cover;
+        overflow: hidden;
+        border-radius: 8rem;
+        
+    }
 }
+
+.listCardInfo{
+    display: grid;
+    gap: 24rem;
+    grid-template-columns: repeat(2, minmax(306rem, 1fr));
+    margin-top: 16rem;
 }
+
+.buttonLink{
+    padding: 10rem !important;
+    width: 100%;
+    height: 40rem;
+    justify-content: space-between;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+
+    @include fnt(14, 20, $weight:600, $color: $gray-700, $font: $fontUI);
+
+    .rightIco{
+        object{
+            margin: 0;
+        }
+    }
+
+    object{
+       width: 20rem;
+       height: 20rem;
+    }
+
+    &.linkWebsite{
+        justify-content: center;
+        background-color: $blue-dark-500;
+        color: $white;
+    }
+}
+
+
+
