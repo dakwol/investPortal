@@ -54,20 +54,32 @@ const Pagination: FC<IPagination> = ({
       setStartPage(numberPages - visiblePages + 1);
       setEndPage(numberPages);
     } else {
-      setStartPage(page - Math.floor(visiblePages / 2));
-      setEndPage(page + Math.floor(visiblePages / 2));
+      setStartPage(page - Math.ceil(visiblePages / 2));
+      setEndPage(page + Math.ceil(visiblePages / 2));
     }
   }, [page, numberPages, visiblePages]);
 
+  console.log("endPage", endPage);
+  console.log("numberPages", numberPages);
+
   return (
     <div>
-      <Buttons
-        text={"Показать еще"}
-        onClick={() => handlePageChange(page + 1, true)}
-        className="buttonPagination"
-      />
+      {numberPages !== 1 && page !== endPage && (
+        <Buttons
+          text={"Показать еще"}
+          onClick={() => handlePageChange(page + 1, true)}
+          className="buttonPagination"
+        />
+      )}
       <div className="conatinerPagination">
         <div className="conainerButtonPage">
+          {numberPages !== 1 && page !== startPage && (
+            <Buttons
+              text={"Предыдущая"}
+              onClick={() => handlePageChange(page - 1, false)}
+              className="whiteButtonArrow"
+            />
+          )}
           {startPage >= 2 && (
             <Buttons
               key={0}
@@ -77,7 +89,7 @@ const Pagination: FC<IPagination> = ({
             ></Buttons>
           )}
           {startPage > 2 && <span>...</span>}
-          {Array.from({ length: endPage - startPage + 1 }, (_, index) => (
+          {Array.from({ length: numberPages }, (_, index) => (
             <Buttons
               key={index + startPage}
               onClick={() => handlePageChange(index + startPage, false)}
@@ -96,6 +108,13 @@ const Pagination: FC<IPagination> = ({
               text={String(numberPages)}
               className={`whiteButton ${page === numberPages && "active"}`}
             ></Buttons>
+          )}
+          {numberPages !== 1 && page !== endPage && (
+            <Buttons
+              text={"Следующая"}
+              onClick={() => handlePageChange(page + 1, false)}
+              className="whiteButtonArrow"
+            />
           )}
         </div>
         <p>{`${numberPages} страниц`}</p>

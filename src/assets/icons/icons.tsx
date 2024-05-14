@@ -29,6 +29,11 @@ import Ozon from "./Ozon.svg";
 import Market from "./Market.svg";
 import Wb from "./Wb.svg";
 import arrowUpRight from "./arrow-up-right.svg";
+import indicator from "./indicator.svg";
+import ArrowLeft from "./ArrowLeft.svg";
+import file from "./file.svg";
+import fileHeader from "./fileHeader.svg";
+import chevronLeft from "./chevron-left.svg";
 export default {
   HelpCircle,
   xClosed,
@@ -57,4 +62,9 @@ export default {
   Market,
   Wb,
   arrowUpRight,
+  indicator,
+  ArrowLeft,
+  file,
+  fileHeader,
+  chevronLeft,
 };

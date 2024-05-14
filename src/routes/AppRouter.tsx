@@ -4,6 +4,7 @@ import { RouteNames, privateRoutes, publicRoutes } from "./index";
 import { useTypeSelector } from "../hooks/useTypedSelector";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 const AppRouter = () => {
   // const isAuthenticated = !!localStorage.getItem("access");
@@ -35,27 +36,30 @@ const AppRouter = () => {
   }, []);
 
   return (
-    <>
-      <Header />
-      <Routes>
-        {isAuthenticated
-          ? privateRoutes.map((route) => (
-              <Route
-                path={route.path}
-                element={<route.element />}
-                key={route.path}
-              />
-            ))
-          : publicRoutes.map((route) => (
-              <Route
-                path={route.path}
-                element={<route.element />}
-                key={route.path}
-              />
-            ))}
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </>
+    <section className="sectionBlock">
+      <div>
+        <Header />
+        <Routes>
+          {isAuthenticated
+            ? privateRoutes.map((route) => (
+                <Route
+                  path={route.path}
+                  element={<route.element />}
+                  key={route.path}
+                />
+              ))
+            : publicRoutes.map((route) => (
+                <Route
+                  path={route.path}
+                  element={<route.element />}
+                  key={route.path}
+                />
+              ))}
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
+      <Footer />
+    </section>
   );
 };
 

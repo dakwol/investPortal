@@ -309,8 +309,6 @@
 
 .backButton{
     background-color: initial;
-    @include fnt(24, 32, $weight:600);
-    margin-bottom: 30rem;
 
     &:hover{
         background-color: $gray-100;

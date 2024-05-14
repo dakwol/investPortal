@@ -5,11 +5,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 16rem 0;
+    gap: 16rem;
 
     .logoContainer{
         display: flex;
         align-items: center;
         gap: 12rem;
+        width: fit-content;
 
         .logoTitle{
             width: 112rem;
@@ -28,5 +30,34 @@
             align-items: center;
             cursor: pointer;
         }
+    }
+}
+
+.searchInputContainer{
+    width: 100%;
+    margin-left: 16rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .dropdownButton{
+        position: absolute;
+        z-index: 99;
+        left: 5rem;
+    }
+}
+
+.searchInput{
+    width: 100%;
+    
+    
+    input{
+        padding: 4rem 110rem !important;
+        background-color: $gray-100;
+        border-radius: 12rem !important;
+    }
+
+    .inputContainer .flexInput .formInput.error{
+        border: none;
     }
 }

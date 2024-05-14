@@ -35,6 +35,13 @@
     cursor: pointer;
     transition: .1s ease-in-out;
     user-select: none;
+    display: flex;
+    align-items: center;
+
+    img{
+        width: 20rem;
+        height: 20rem;
+    }
     
     &:hover{
         color: $blue;
@@ -45,12 +52,35 @@
     }
 }
 .productName{
+    @include fnt(16, 24, $weight: 400, $color: $gray-900, $font: $fontText);
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    padding-left: 20rem;
+    img{
+        width: 20rem;
+        height: 20rem;
+    }
+    
+    &:hover{
+        color: $blue;
+    }
+
+    &.active{
+        padding-left: 0;
+        color: $gray-500
+    }
+}
+.productChildName{
     @include fnt(14, 20, $weight: 400, $color: $gray-900, $font: $fontText);
     
     padding: 4rem 12rem 4rem 32rem;
     cursor: pointer;
     transition: .1s ease-in-out;
     user-select: none;
+    display: flex;
+    align-items: center;
 
     &:hover{
         background-color: $blue-dark-50;

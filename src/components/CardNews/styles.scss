@@ -1,0 +1,30 @@
+@use "../../scss/" as *;
+
+.newsCardContainer{
+    border-radius: 16rem;
+    overflow: hidden;
+    background-color: $gray-100;
+    cursor: pointer;
+    .newsCardImg{
+        height: 50%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .newsInfoContainer{
+        padding: 16rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        .newsDate{
+            @include fnt(14, 18, $weight:400, $color: $gray-500, $font: $fontText)
+        }
+        .newsTitle{
+            @include fnt(16, 24, $weight:500, $color: $gray-900, $font: $fontText)
+        }
+        .newsText{
+            @include fnt(14, 18, $weight:400, $color: $gray-500, $font: $fontText)
+        }
+    }
+}

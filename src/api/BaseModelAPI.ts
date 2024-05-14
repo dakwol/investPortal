@@ -4,7 +4,7 @@ import apiConfig from './apiConfig';
 import axiosClient from './axiosClient';
 
 interface ApiData<T> {
-    actions?: T | null;
+    actions?: any| null;
     description?:string;
     [key: string]: any;
 }

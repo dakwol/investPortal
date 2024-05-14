@@ -5,6 +5,8 @@ import icons from "../../assets/icons/icons";
 import ContentApiRequest from "../../api/ContentApi/ContentApi";
 import Skeleton from "react-loading-skeleton";
 import CategoriesApiRequest from "../../api/ProductApi/ProductApi";
+import { useDispatch } from "react-redux";
+import { SearchActionCreators } from "../../store/reducers/searchPressItem/action-creator";
 
 interface Category {
   id: number;
@@ -13,6 +15,7 @@ interface Category {
 }
 
 const FilterSidebar: FC = () => {
+  const dispatch = useDispatch();
   const contentApi = new CategoriesApiRequest();
   const [arrayFilter, setArrayFilter] = useState<Category[]>([]);
   const [openCategory, setOpenCategory] = useState<number | null>(2); // Track the currently open category
@@ -46,6 +49,14 @@ const FilterSidebar: FC = () => {
     setOpenProduct((prev) => (prev === productId ? null : productId));
   };
 
+  const handleClick = (id?: number) => {
+    dispatch(SearchActionCreators.setDataPress("category", `${id}`));
+  };
+
+  useEffect(() => {
+    dispatch(SearchActionCreators.clearDataPress());
+  }, [openProduct, openChildCategory]);
+
   const renderCategory = (category: Category) => (
     <ul>
       {category.children.map((child) => (
@@ -56,6 +67,7 @@ const FilterSidebar: FC = () => {
               openChildCategory === child.id ? "active" : ""
             }`}
           >
+            {openChildCategory === child.id && <img src={icons.chevronLeft} />}
             {child.name}
           </p>
           {openChildCategory === child.id && (
@@ -63,16 +75,26 @@ const FilterSidebar: FC = () => {
               {child.children.map((product) => (
                 <li key={product.id}>
                   <p
-                    className="productName"
+                    className={`productName ${
+                      openProduct === product.id && "active"
+                    }`}
                     onClick={() => handleProductClick(product.id)}
                   >
+                    {openProduct === product.id && (
+                      <img src={icons.chevronLeft} />
+                    )}
                     {product.name}
                   </p>
                   {openProduct === product.id && (
                     <ul>
                       {product.children.map((productItem) => (
                         <li key={productItem.id}>
-                          <p className="productName">{productItem.name}</p>
+                          <p
+                            className="productChildName"
+                            onClick={() => handleClick(productItem.id)}
+                          >
+                            {productItem.name}
+                          </p>
                         </li>
                       ))}
                     </ul>
@@ -104,15 +126,22 @@ const FilterSidebar: FC = () => {
         />
       </div>
       <div>
-        {arrayFilter.length > 0 ? (
-          arrayFilter.map((category) => (
-            <div key={category.id}>
-              {openCategory === category.id && renderCategory(category)}
-            </div>
-          ))
-        ) : (
-          <Skeleton />
-        )}
+        {arrayFilter.length > 0
+          ? arrayFilter.map((category) => (
+              <div key={category.id}>
+                {openCategory === category.id && renderCategory(category)}
+              </div>
+            ))
+          : [...Array(Math.floor(Math.random() * 31) + 20)].map((_, index) => (
+              <Skeleton
+                key={index}
+                width={`${Math.random() * 50 + 50}%`}
+                height={20}
+                borderRadius={16}
+                count={1}
+                enableAnimation={true}
+              />
+            ))}
       </div>
     </div>
   );

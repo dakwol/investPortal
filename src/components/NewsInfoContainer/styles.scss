@@ -1,0 +1,92 @@
+@use "../../scss/" as *;
+
+.newsContainer{
+    width: 50%;
+}
+
+.datePage{
+    @include fnt(14, 20, $weight:400, $color: $gray-500, $font: $fontText);
+    margin: 8rem 0 16rem;
+}
+
+.headingTitle{
+    @include fnt(24, 28, $weight:400, $color: $gray-900, $font: $fontText);
+}
+.paragraph{
+    margin-top: 24rem;
+    p{
+        @include fnt(16, 24, $weight:400, $color: $gray-900, $font: $fontText);
+    }
+}
+
+.containerQuote{
+    border-left: 2rem solid $blue-dark-500;
+    padding-left: 16rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    margin: 24rem 0;
+    .textQuote{
+        @include fnt(16, 24, $weight:400, $color: $gray-900, $font: $fontText); 
+    }
+    .quote{
+        @include fnt(14, 16, $weight:400, $color: $gray-500, $font: $fontText); 
+    }
+}
+
+.containerDocuments{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24rem;
+    margin-top: 24rem;
+}
+
+.docContainer{
+    border-radius: 16rem;
+    padding: 12rem 16rem 12rem 12rem;
+    background-color: $gray-100;
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+
+    .iconFile{
+        border-radius: 100%;
+        background-color: $white;
+        padding: 8rem;
+    }
+
+    .docInfo{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        .docTitle{
+            @include fnt(14, 16, $weight:500, $color: $gray-900, $font: $fontText); 
+        }
+    
+        .docFooter{
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+    
+            .docSize{
+                @include fnt(14, 16, $weight:400, $color: $gray-400, $font: $fontText); 
+            }
+            .docType{
+                padding: 4rem;
+                background-color: $gray-300;
+                border-radius: 4rem;
+                @include fnt(10, 12, $weight:500, $color: $gray-500, $font: $fontText); 
+            }
+        }
+        
+    }
+
+    
+}
+
+.imageBlock{
+    width: 100%;
+    height: 356rem;
+    object-fit: cover;
+    border-radius: 8rem;
+}

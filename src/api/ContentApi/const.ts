@@ -8,6 +8,9 @@ export const API_CONTENT_MODEL = {
         },
         productCategories: {
             url: 'products/categories/all/'
+        },
+        newsList: {
+            url: 'news/'
         }
     },
 }

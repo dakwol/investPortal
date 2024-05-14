@@ -20,8 +20,8 @@
 }
 
 .modal{
-    max-width: 640rem;
-    max-height: 740rem;
+    max-width: 448rem;
+    max-height: 796rem;
     width: 100%;
     border-radius: 12rem;
     overflow: auto;
@@ -31,7 +31,7 @@
     z-index: 101;
     transform: translate(-50%, -50%) scale(0);
     background-color: $white;
-    padding: 32rem;
+    padding: 32rem 72rem;
     border-radius: 24rem;
     opacity: 0;
     scrollbar-width: none; /* для скрытия скроллбара в Firefox */

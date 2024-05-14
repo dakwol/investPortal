@@ -253,10 +253,28 @@ const decryptData = (encryptedData: string) => {
   return JSON.parse(decodedData);
 };
 
+const getFormat = (url: string) => {
+  return url.split(".").at(-1);
+};
+
+const getSize = (bytes: number, decimals = 0) => {
+  if (bytes === 0) {
+    return "0";
+  } else {
+    var k = 1024;
+    var dm = decimals < 0 ? 0 : decimals;
+    var sizes = ["B", "KB", "MB", "GB", "TB"];
+    var i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+  }
+};
+
 //Функция получения choices
 
 export {
   getFormatedDate,
+  getFormat,
+  getSize,
   getDateTime,
   fieldToArray,
   transformDate,
